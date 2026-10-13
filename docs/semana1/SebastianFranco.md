@@ -2,9 +2,9 @@
 
 **Nombre:** Sebastian Franco Uribe
 
-**Usuario de GitHub:** sebasfrancogrs)
+**Usuario de GitHub:** sebasfrancogrs
 
----
+----
 
 ## El problema
 

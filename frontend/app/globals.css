@@ -1,0 +1,96 @@
+:root {
+  --bg: #f5f6f8;
+  --panel: #ffffff;
+  --texto: #1b2230;
+  --suave: #5b6578;
+  --borde: #dfe3ea;
+  --acento: #1f4fd8;
+  --acento-fondo: #e8eefc;
+  --ok: #176b3a;
+  --ok-fondo: #e3f5ea;
+  --mal: #a1222b;
+  --mal-fondo: #fbe7e8;
+  --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #11151d;
+    --panel: #1a2030;
+    --texto: #e8ecf4;
+    --suave: #9aa5ba;
+    --borde: #2a3247;
+    --acento: #7ea2ff;
+    --acento-fondo: #1f2a4a;
+    --ok: #6fd69a;
+    --ok-fondo: #14301f;
+    --mal: #ff8b93;
+    --mal-fondo: #3a1a1d;
+  }
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--texto);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  line-height: 1.5;
+}
+.nav { background: var(--panel); border-bottom: 1px solid var(--borde); }
+.nav-inner {
+  max-width: 980px; margin: 0 auto; padding: 12px 16px;
+  display: flex; flex-wrap: wrap; gap: 12px 20px; align-items: center;
+}
+.marca { font-weight: 700; color: var(--texto); text-decoration: none; font-size: 1.1rem; }
+nav { display: flex; flex-wrap: wrap; gap: 4px; flex: 1; }
+nav a {
+  padding: 6px 10px; border-radius: 6px; color: var(--suave); text-decoration: none; font-size: .95rem;
+}
+nav a:hover { background: var(--acento-fondo); color: var(--texto); }
+nav a.activo { background: var(--acento-fondo); color: var(--acento); font-weight: 600; }
+.actor { display: flex; flex-direction: column; font-size: .75rem; color: var(--suave); }
+.actor select { font-size: .9rem; margin-top: 2px; }
+.contenedor { max-width: 980px; margin: 0 auto; padding: 24px 16px 48px; }
+.pie { max-width: 980px; margin: 0 auto; padding: 0 16px 32px; color: var(--suave); font-size: .85rem; }
+h1 { margin: 0 0 4px; font-size: 1.6rem; }
+.sub { color: var(--suave); margin: 0 0 20px; }
+.tarjeta {
+  background: var(--panel); border: 1px solid var(--borde); border-radius: 10px;
+  padding: 18px; margin-bottom: 16px;
+}
+.rejilla { display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); }
+.rejilla .tarjeta { margin: 0; }
+.rejilla a.tarjeta { text-decoration: none; color: inherit; display: block; }
+.rejilla a.tarjeta:hover { border-color: var(--acento); }
+.cifra { font-size: 2rem; font-weight: 700; }
+label.campo { display: block; margin-bottom: 14px; font-weight: 600; font-size: .92rem; }
+label.campo small { display: block; font-weight: 400; color: var(--suave); }
+input[type=text], textarea, select, input[type=file] {
+  display: block; width: 100%; margin-top: 4px; padding: 8px 10px; font: inherit;
+  border: 1px solid var(--borde); border-radius: 6px; background: var(--bg); color: var(--texto);
+}
+.actor select { width: auto; background: var(--bg); }
+textarea { min-height: 70px; resize: vertical; }
+button {
+  font: inherit; font-weight: 600; padding: 9px 16px; border-radius: 6px; cursor: pointer;
+  border: 1px solid var(--acento); background: var(--acento); color: #fff;
+}
+@media (prefers-color-scheme: dark) { button { color: #0b1020; } }
+button.sec { background: transparent; color: var(--acento); }
+button:disabled { opacity: .5; cursor: not-allowed; }
+.acciones { display: flex; gap: 8px; flex-wrap: wrap; }
+.aviso { padding: 10px 12px; border-radius: 6px; margin: 12px 0; font-size: .95rem; }
+.aviso.ok { background: var(--ok-fondo); color: var(--ok); }
+.aviso.mal { background: var(--mal-fondo); color: var(--mal); }
+.aviso.info { background: var(--acento-fondo); color: var(--texto); }
+.hash { font-family: var(--mono); font-size: .8rem; word-break: break-all; color: var(--suave); }
+.linea { list-style: none; margin: 0; padding: 0; border-left: 2px solid var(--borde); }
+.linea li { position: relative; padding: 0 0 18px 18px; }
+.linea li::before {
+  content: ""; position: absolute; left: -7px; top: 6px; width: 12px; height: 12px;
+  border-radius: 50%; background: var(--acento); border: 2px solid var(--panel);
+}
+.etiqueta {
+  display: inline-block; font-size: .72rem; font-weight: 700; padding: 1px 7px; border-radius: 99px;
+  background: var(--acento-fondo); color: var(--acento); margin-right: 6px;
+}
+.vacio { color: var(--suave); }
